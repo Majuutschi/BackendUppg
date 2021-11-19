@@ -1,0 +1,84 @@
+﻿@model BE2AspNetMvc.Models.User
+
+@{
+    ViewData["Title"] = "Create";
+}
+<h2 class="mb-5 text-center">Skapa konto</h2>
+
+<form class="p-5 text-center border" asp-action="Create">
+    <div class="container px-5">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row mb-5">
+            <div class="col">
+                <div class="form-outline">
+                    <label asp-for="FirstName" class="control-label"></label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-outline">
+                    <label asp-for="LastName" class="control-label"></label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-outline mb-4">
+            <label asp-for="AddressLine" class="control-label"></label>
+            <input asp-for="AddressLine" class="form-control" />
+            <span asp-validation-for="AddressLine" class="text-danger"></span>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col">
+                <div class="form-outline">
+                    <label asp-for="Zipcode" class="control-label"></label>
+                    <input asp-for="Zipcode" class="form-control" />
+                    <span asp-validation-for="Zipcode" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-outline">
+                    <label asp-for="City" class="control-label"></label>
+                    <input asp-for="City" class="form-control" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-outline mb-5">
+            <label asp-for="PhoneNumber" class="control-label"></label>
+            <input asp-for="PhoneNumber" class="form-control" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+            <label asp-for="Email" class="control-label"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <!-- Password input -->
+        <div class="form-outline mb-5">
+            <label asp-for="Password" class="control-label"></label>
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+
+
+
+        <!-- Submit button -->
+        <button type="submit" value="Create" class="btn btn-secondary px-3 my-5">Registrera konto</button>
+
+        <div class="text-center">Redan medlem? <a asp-action="SignIn">Logga in</a></div>
+    </div>
+</form>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,61 @@
+﻿@model BE2AspNetMvc.Models.Product
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-center mb-3">Skapa produkt</h1>
+
+<div class="container">
+    
+    <form asp-action="Create" class="">
+        <div class="text-center p-5">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row form-outline mb-4">
+                <label asp-for="Name" class="col-sm-2 col-form-label">Produktnamn</label>
+                <div class="col-sm-10">
+                    <input asp-for="Name" class="form-control" />
+                </div>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="row form-outline mb-4">
+                <label asp-for="Description" class="col-sm-2 col-form-label">Beskrivning</label>
+                <div class="col-sm-10">
+                    <textarea asp-for="Description" class="form-control" cols="30" rows="6"></textarea>
+                </div>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="row form-outline mb-4">
+                <label asp-for="Price" class="col-sm-2 col-form-label">Pris</label>
+                <div class="col-sm-10">
+                    <input asp-for="Price" class="form-control" />
+                </div>
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <div class="row form-outline mb-4">
+                <label asp-for="ImageUrl" class="col-sm-2 col-form-label">Bildlänk</label>
+                <div class="col-sm-10">
+                    <input asp-for="ImageUrl" class="form-control" />
+                </div>
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+
+                <button type="submit" value="Create" class="btn btn-success px-5 my-5">SKAPA PRODUKT</button>
+            </div>
+    </form>
+
+</div>
+
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
